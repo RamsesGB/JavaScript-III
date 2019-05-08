@@ -29,6 +29,7 @@ function sayName(name) {
   sayName("Ramses");
 
 // code example for Window Binding
+//--------------------------------------
 
 // Principle 2
 
@@ -42,13 +43,31 @@ const personAskingPrice = {
   personAskingPrice.askPrice('Ramses');
 
 // code example for Implicit Binding
-
-
+//---------------------------------------
 
 // Principle 3
 
+function NewPlayerCreator(obj) {
+    this.name = obj.name;
+    this.team = obj.team;
+    this.speak = function() {
+        console.log(`Hey! I'm ${this.name} and I'm in the ${this.team} team`)
+    }
+}
+
+const ramses = new NewPlayerCreator({name: 'Ramses', team: 'Purple'});
+const andrea = new NewPlayerCreator({name: 'Andrea', team: 'blue'});
+
+ramses.speak();
+andrea.speak();
 // code example for New Binding
+//---------------------------------------
 
 // Principle 4
+
+ramses.speak.call(andrea);
+
+// The above .call method will cause the 'this' keyword to explicitly point to the values in the object named andrea
+// This will cause the return values in the function to be that of the object named andrea and not of the object named ramses.
 
 // code example for Explicit Binding
