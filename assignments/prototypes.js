@@ -55,7 +55,6 @@ CharacterStats.prototype.takeDamage = function() {
 */
 
 function Humanoid(obj3) {
-  GameObject.call(this, obj3);
   CharacterStats.call(this, obj3);
   this.team = obj3.team;
   this.weapons = obj3.weapons;
@@ -68,6 +67,14 @@ Humanoid.prototype.greet = function() {
   return `${this.name} offers a greeting in ${this.language}`
 };
 
+
+function Villain(obj4) {
+  Humanoid.call(this, obj4);
+}
+
+function Hero(obj5){
+  Humanoid.call(this, obj5);
+}
  
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Humanoid
