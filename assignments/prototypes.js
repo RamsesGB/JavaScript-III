@@ -72,8 +72,16 @@ function Villain(obj4) {
   Humanoid.call(this, obj4);
 }
 
+Villain.prototype.drainHealth = function(num1){
+  return ``
+}
+
 function Hero(obj5){
   Humanoid.call(this, obj5);
+}
+
+Hero.prototype.restoreHealth = function(num2){
+
 }
  
 /*
