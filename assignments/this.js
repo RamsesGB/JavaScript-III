@@ -22,11 +22,28 @@
 
 // Principle 1
 
+function sayName(name) {
+    console.log(this);
+    return name;
+  }
+  sayName("Ramses");
+
 // code example for Window Binding
 
 // Principle 2
 
+const personAskingPrice = {
+    greeting: 'Hello',
+    item:     'House',
+    askPrice: function(nameOfPersonAsking) {
+      console.log(`${this.greeting} my name is ${nameOfPersonAsking} how much does this ${this.item} cost?`);
+    }
+  };
+  personAskingPrice.askPrice('Ramses');
+
 // code example for Implicit Binding
+
+
 
 // Principle 3
 
